@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="scripts.js"></script>
+    <style>
+        .card{
+            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+        }
+    </style>
+</head>
+<body style="background: rgb(2,0,36);
+background: linear-gradient(236deg, rgba(2,0,36,1) 0%, rgba(247,0,9,1) 0%, rgba(247,186,0,1) 100%);">
+    <div class="container">
+        <br>
+        <div class="row" id="successMessage" style="display: none;">
+            <div class="col">
+                <div class="alert alert-success">Added the track</div>
+            </div>
+        </div>
+        <div class="row" id="failureMessage" style="display: none;">
+            <div class="col">
+                <div class="alert alert-danger">Unable to perform the task</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8" style="height: inherit;">
+                <div class="card" style="height: 100%;">
+                    <div class="card-body">
+                        <div class="card-title">Add a Track</div>
+                        <form onsubmit=" event.preventDefault(); addNewURL();">
+                            <div class="form-group">
+                                <label class="text-muted card-text" for="name">Name:</label>
+                                <input type="text" class="form-control" placeholder="Enter name" id="name">
+                              </div>
+                              <div class="form-group">
+                                <label class="text-muted card-text" for="url">URL:</label>
+                                <input type="text" class="form-control" placeholder="Enter url" id="url">
+                              </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" style="height: inherit;">
+                <div class="card" style="height: 100%;">
+                    <div class="card-body" id="tracklist">
+                        <div class="card-title">Current Tracklist</div>
+                        <div class="row" id="songdata"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" style="display: none;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">Currently Playing</div>
+                        <div class="text-muted" id="songname">I know your secrets</div>
+                        <br>
+                        <audio controls style="width: 100%;" id="audiosource">
+                            <source id="trackURL" src="http://dl19.freemp3downloads.online/file/youtubeIGN3u8TBO4w128.mp3?fn=%27I%20Know%20Your%20Secrets%27%20(feat.%20Liv%20Ash)%20_%20Produced%20by%20Tommee%20Profitt.mp3" type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
