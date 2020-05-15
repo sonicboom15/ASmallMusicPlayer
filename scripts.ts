@@ -20,15 +20,16 @@ class PlayList{
 
 let playlist = new PlayList();
 const generatePlaylistContent = (playlist:PlayList) =>{
-    let element = <HTMLDivElement>document.getElementById("songdata");
+    let element = <HTMLUListElement>document.getElementById("songdata");
     const wordGenerator = (element,song) =>{
+        let li = <HTMLLIElement>document.createElement("li");
+        li.classList.add("list-group-item");
+
         let div = <HTMLDivElement>document.createElement("div");
         div.classList.add("row");
-        div.classList.add("col");
 
         let nameContainer  = <HTMLDivElement>document.createElement("div");
         nameContainer.classList.add("col");
-        nameContainer.classList.add("text-muted")
         nameContainer.innerHTML = song.songName;
         div.appendChild(nameContainer);
 
@@ -39,7 +40,6 @@ const generatePlaylistContent = (playlist:PlayList) =>{
         playButton.innerHTML = "Play";
         playButton.classList.add("btn");
         playButton.classList.add("btn-primary")
-        playContainer.appendChild(playButton);
         playButton.onclick = () => {
             let change = (song) =>{
                 let title = <HTMLDivElement>document.getElementById("songname");
@@ -52,9 +52,10 @@ const generatePlaylistContent = (playlist:PlayList) =>{
             }
             change(song);
         }
+        playContainer.appendChild(playButton);
         div.appendChild(playContainer);
-
-        element.appendChild(div);
+        li.appendChild(div)
+        element.appendChild(li);
     }
     playlist.songs.forEach(song => {
         wordGenerator(element,song);
