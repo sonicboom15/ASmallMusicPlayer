@@ -67,8 +67,10 @@ const addNewURL = () =>{
     let nameValue = name.value;
     let url = <HTMLInputElement>document.getElementById("url")
     let urlValue = url.value;
+    name.value = "";
     let newSong = new Song(nameValue,urlValue);
     playlist.addSong(newSong);
+    url.value = "";
     let element = <HTMLDivElement>document.getElementById("songdata");
     element.innerHTML = "";
     generatePlaylistContent(playlist);

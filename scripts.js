@@ -57,8 +57,10 @@ var addNewURL = function () {
     var nameValue = name.value;
     var url = document.getElementById("url");
     var urlValue = url.value;
+    name.value = "";
     var newSong = new Song(nameValue, urlValue);
     playlist.addSong(newSong);
+    url.value = "";
     var element = document.getElementById("songdata");
     element.innerHTML = "";
     generatePlaylistContent(playlist);
